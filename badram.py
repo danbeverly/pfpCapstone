@@ -1,7 +1,10 @@
+# File to simulate something odd happening with the pi
 
+# Necessary imports
 import os
 import serial
 
+# Set up serial communication with the defensive computer hosting PowerFingerprinting
 ser = serial.Serial(
 port = '/dev/ttyS0',
 baudrate = 115200,
@@ -11,8 +14,10 @@ bytesize = serial.EIGHTBITS,
 timeout = 1
 )
 
+# At the start of the simulated attack, send a '1' to the defensive device to begin the timer
 ser.write('1'.encode())
 
+# fork the program several times and run various processes to overwhelm the CPU
 os.fork()
 os.fork()
 os.fork()
