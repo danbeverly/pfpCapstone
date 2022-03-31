@@ -11,10 +11,10 @@ Using PFP Cybersecurity's implementation of an artificial intelligence integrity
 In addition, read more about our backgroud research, implementation, and testing in our capstone report.
 
 # System Design
-Insert basic system diagram HERE
+Insert basic system diagram HERE.
 The system is suprisingly simple, and we estimate it to be reasonably scalable for what our research entailed. On the defensive system, the PFP Cybersecurity pMon 751 uses its sensor to monitor the CPU of the Raspberry Pi3. Its live results are read by PFP's server, which is running on the localhost. 
 
-Using the API designed in conjunction with the server, we run wrkingRemediation.py also on the defensive system. It constantly reads stream output from the server and compares results, looking for an abnormal signal. Upon receiving such a signal, it sends the reboot signal to the Pi.
+Using the API designed in conjunction with the server, we run workingRemediation.py also on the defensive system. It constantly reads stream output from the server and compares results, looking for an abnormal signal. Upon receiving such a signal, it sends the reboot signal to the Pi.
 
 On the Pi, the receive.py program is running, listening for the reboot signal. When the Pi successfully reboots, it sends its own signal back to the defensive system.
 
