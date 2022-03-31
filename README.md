@@ -21,3 +21,7 @@ On the Pi, the receive.py program is running, listening for the reboot signal. W
 Also on the Pi, we concurrently run badram.py at a random point. This simulates an attack or otherwise erroneous behavior of the system, triggering the of the feedback system. When badram.py starts, it sends its own signal back to the defensive host to signal that an 'attack' has started. 
 
 The signals aid in the overall function of the system, but also in timing. When badram.py first starts, it sends a signal to the defensive sytem to begin timing. When the defensive system detects the anomaly and sends the reboot signal, it gets it first metric of remediation time. Then, when the Pi successfully reboots, it gets its second metric of total reboot time. The reboot time is very specific to the system itself (the Pi in this case), but this framework could be used for any number of systems to get further data.
+
+# Video
+https://user-images.githubusercontent.com/60118678/160965346-85df41bd-d830-411d-98bb-81d9ed6d8deb.mp4
+
