@@ -1,0 +1,14 @@
+﻿Citation for python code programming for capstone:
+
+
+1. https://www.engineersgarage.com/articles-raspberry-pi-serial-communication-uart-protocol-ttl-port-usb-serial-boards/ 
+2. https://opensource.com/article/20/5/usb-port-raspberry-pi-python 
+3. https://stackoverflow.com/questions/64669052/serial-communication-raspberry-pi-to-pc 
+4. https://stackoverflow.com/questions/16701401/python-and-serial-how-to-send-a-message-and-receive-an-answer 
+5. https://stackoverflow.com/questions/24069275/pyserial-serial-port-send-receive 
+6. https://firmlyembedded.co.za/useful-python-script-to-send-and-receive-serial-data/ 
+7. https://stackoverflow.com/questions/57497833/python-requests-stream-data-from-api
+8. https://stackoverflow.com/questions/7370801/how-to-measure-elapsed-time-in-python  
+9. https://www.geeksforgeeks.org/json-loads-in-python/#:~:text=loads()%20method%20can%20be,JSON%20data%20into%20Python%20Dictionary. 
+10. https://stackoverflow.com/questions/22275079/pyserial-write-wont-take-my-string 
+11. https://www.dexterindustries.com/howto/run-a-program-on-your-raspberry-pi-at-startup/
