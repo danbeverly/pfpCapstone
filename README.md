@@ -11,14 +11,14 @@ Using PFP Cybersecurity's implementation of an artificial intelligence integrity
 In addition, read more about our backgroud research, implementation, and testing in our capstone report.
 
 # System Design
-Insert basic system diagram HERE.
+![systemSchematic](https://user-images.githubusercontent.com/60118678/161191715-77e60928-6add-40e7-8f99-04fb18b73ff6.png)
 The system is suprisingly simple, and we estimate it to be reasonably scalable for what our research entailed. On the defensive system, the PFP Cybersecurity pMon 751 uses its sensor to monitor the CPU of the Raspberry Pi3. Its live results are read by PFP's server, which is running on the localhost. 
 
 Using the API designed in conjunction with the server, we run workingRemediation.py also on the defensive system. It constantly reads stream output from the server and compares results, looking for an abnormal signal. Upon receiving such a signal, it sends the reboot signal to the Pi.
 
 On the Pi, the receive.py program is running, listening for the reboot signal. When the Pi successfully reboots, it sends its own signal back to the defensive system.
 
-Also on the Pi, we concurrently run badram.py at a random point. This simulates an attack or otherwise erroneous behavior of the system, triggering the of the feedback system. When badram.py starts, it sends its own signal back to the defensive host to signal that an 'attack' has started. 
+Also on the Pi, we concurrently run badram.py at a random point. This simulates an attack or otherwise erroneous behavior of the system, triggering the feedback system. When badram.py starts, it sends its own signal back to the defensive host to signal that an 'attack' has started. 
 
 The signals aid in the overall function of the system, but also in timing. When badram.py first starts, it sends a signal to the defensive sytem to begin timing. When the defensive system detects the anomaly and sends the reboot signal, it gets it first metric of remediation time. Then, when the Pi successfully reboots, it gets its second metric of total reboot time. The reboot time is very specific to the system itself (the Pi in this case), but this framework could be used for any number of systems to get further data.
 
