@@ -8,8 +8,8 @@ import time
 '''
 This code is to be used as the main remediation method from the defensive computer.
 It pipelines our response for timing how long the detection takes and how long reboot takes.
-This code furthermore goes through stremed data on the API and parses it for what we want.
-This also prints diagnostic of our remediation method.
+This code also goes through streamed data on the API and parses it for what we want.
+Prints diagnostic of our remediation method to be more user-friendly.
 
 Run this code when you are ready to remediate and read the EM sensor.
 python3 workingRemediation.py
@@ -77,7 +77,9 @@ def main():
             rebootTime = time.time_ns()
             break
     #used citation [8] to help us develop timing mechanism
+    #totalTime = time from start of attack to time of reboot signal sent
     totalTime = endTime - startTime
+    #rbTime = time from start of attack to attacked Pi coming back online
     rbTime = rebootTime - startTime
     totalTime = totalTime/(10**9)
     rbTime = rbTime/(10**9)
